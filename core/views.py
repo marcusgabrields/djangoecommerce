@@ -1,11 +1,16 @@
 from django.conf import settings
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
 from .forms import ContactForm
 
 
-def index(request):
-    return render(request, 'index.html')
+class IndexView(TemplateView):
+
+    template_name = 'index.html'
+
+
+index = IndexView.as_view()
 
 def contact(request):
     succsess = False
