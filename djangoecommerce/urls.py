@@ -26,5 +26,6 @@ urlpatterns = [
     path('contato/', views.contact, name="contact"),
     path('entrar/', LoginView.as_view(template_name='login.html'),  name="login"),
     path('sair/', LogoutView.as_view(next_page = '/'),  name="logout"),
+    path('registro/', views.register,  name="register"),
     path('catalogo/', include(('catalog.urls', 'catalog'), namespace='catalog')),
 ]
