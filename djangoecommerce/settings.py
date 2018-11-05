@@ -147,6 +147,7 @@ DEFAULT_FROM_EMAIL = 'admin@djangoecommercer.com'
 # Auth
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+LOGOUT_URL = 'logout'
 
 try:
     from .local_settings import *
