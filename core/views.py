@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views.generic import CreateView, TemplateView
-
+from django.contrib import messages
 from .forms import ContactForm
 
 
@@ -23,6 +23,8 @@ def contact(request):
     if form.is_valid():
         form.send_mail()
         succsess = True
+    elif request.method == 'POST':
+        messages.error(request, 'Formulario invalido')
     context = {
         'form': form,
         'success': succsess,
